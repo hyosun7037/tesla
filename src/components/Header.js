@@ -17,11 +17,8 @@ function Header() {
             </a>
             <Menu>
                 {cars && cars.map((car, index) => (
-                    <a href="#">Model S</a>
+                    <a key={index} href="#">{car}</a>
                 ))}
-                <p><a href="#">Model 3</a></p>
-                <p><a href="#">Model X</a></p>
-                <p><a href="#">Model Y</a></p>
             </Menu>
             <RightMenu>
                 <a href='#'>SHOP</a>
@@ -32,7 +29,10 @@ function Header() {
                 <CloseWrapper>
                     <CustomClose onClick={() => setBurgerStatus(false)}/>
                 </CloseWrapper>
-                <li><a href="">Existing Inventory</a></li>
+                {cars && cars.map((car, index) => (
+                    <li key={index}><a href="#">{car}</a></li>
+                ))}
+                
                 <li><a href="">Used Inventory</a></li>
                 <li><a href="">Trade-in</a></li>
                 <li><a href="">Cybertruck</a></li>
